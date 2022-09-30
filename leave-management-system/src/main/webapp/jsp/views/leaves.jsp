@@ -45,6 +45,7 @@
 	
 	<thead>
 		<tr>
+			<th>Teacher</th>
 			<th>Apply Date</th>
 			<th>Leave Start</th>
 			<th>Leave Days</th>
@@ -55,6 +56,7 @@
 	<tbody>
 		<c:forEach items="${ list }" var="item">
 			<tr>
+				<td>${ item.teacher }</td>
 				<td>${ item.applyDate }</td>
 				<td>${ item.startDate }</td>
 				<td>${ item.days } Days</td>

@@ -23,19 +23,22 @@
 		
 		<h3 class="my-4">Leave Application</h3>
 		<div class="row">
-			<c:url value="/leaves" var="save">
-				<c:param name="classId" value="${ param.classId }"></c:param>
-				<c:param name="student" value="${ param.studentId }"></c:param>
-			</c:url>
+			<c:url value="/leaves" var="save"></c:url>
 			<sf:form method="post" action="${ save }" modelAttribute="form" cssClass="col-lg-6 col-md-9 col-sm-12" >
 
+				<sf:hidden path="classId"/>
+				<sf:hidden path="student"/>
+				<sf:hidden path="applyDate"/>
 				
 				<div class="mb-3">
-					<label class="form-label">Apply Date</label>
-					<sf:input path="applyDate" type="date" cssClass="form-control"/>
-					<sf:errors path="applyDate" cssClass="text-secondary"></sf:errors>
+					<label class="form-label">Class</label>
+					<span class="form-control">${ classInfo.description } (${ classInfo.startDate })</span>
 				</div>
 				
+				<div class="mb-3">
+					<label class="form-label">Teacher</label>
+					<span class="form-control">${ classInfo.teacherName }</span>
+				</div>
 				
 				<div class="mb-3">
 					<label class="form-label">Start Date</label>
